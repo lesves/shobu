@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>SHŌBU</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+
+		<link data-trunk rel="copy-dir" href="assets" />
+
+		<style>
+			html, body {
+				margin: 0;
+				padding: 0;
+				font-family: 'EB Garamond', serif;
+			}
+
+			body {
+				background: url("https://images.unsplash.com/photo-1520931546307-9b4ae35551d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2735&q=80");
+				background-size: 100% auto;
+				/*background: url("assets/bamboo.jpg"); /*linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), */
+			}
+
+			#shobu {
+				display: block; 
+				margin: 0 auto;
+				max-width: 90vw;
+				height: 100vh;
+			}
+
+			#shobu rect {
+				rx: 0.05;
+				ry: 0.05;
+			}
+
+			#shobu rect.board {
+				stroke: black;
+				stroke-width: 0.05;
+			}
+
+			.tile {
+				stroke: black;
+				stroke-width: 0.05;
+			}
+
+			.tile.tl, .tile.tr {
+				fill: transparent;
+			}
+
+			.tile.br, .tile.bl {
+				fill: transparent;
+			}
+
+			.tile.possible {
+				fill: rgb(171, 85, 120);
+			}
+
+			.tile.selected {
+				fill: rgb(140, 190, 95);
+			}
+
+			line.arrow {
+				stroke: rgb(85, 171, 137);
+			}
+
+			path.arrow {
+				fill: rgb(85, 171, 137);
+			}
+
+			.area {
+				fill: none;
+			}
+
+			.area.disabled {
+				fill: rgba(0,0,0,0.2);
+			}
+
+			.area.enabled {
+				fill: rgba(140,190,95,0.2);
+			}
+
+			.popup {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+
+				min-width: 10vw;
+				max-width: 20vw;
+
+				background: white;
+				padding: 1.5rem 2rem;
+
+				border-radius: 5px;
+				border: 0.5rem solid black;
+			}
+
+			.popup button {
+				margin-bottom: 0.5rem;
+			}
+
+			.popup details summary { 
+				cursor: pointer;
+				border-bottom: 1px solid black;
+			}
+
+			.popup table {
+				width: 100%;
+			}
+
+			.popup table td:has(button), .popup table td:has(select) {
+				text-align: right;
+			}
+
+			.shobu-text {
+				font-family: serif;
+			}
+
+			.disabled {
+				pointer-events: none;
+			}
+
+			#sidebar {
+				width: 10vw;
+				height: 100vh;
+				padding-left: 0.25rem;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+
+				background: rgba(0, 0, 0, 0.5);
+			}
+
+			#sidebar button img {
+				max-width: 2rem;
+			}
+		</style>
+	</head>
+</html>
